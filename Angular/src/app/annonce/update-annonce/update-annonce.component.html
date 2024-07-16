@@ -1,0 +1,56 @@
+<div class="col-md-6 offset-md-3">
+    <h3> Update Annonce </h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+
+
+
+        <div class="form-group">
+            <label> clientname </label>
+            <input type="text" class ="form-control" id = "clientname"
+                [(ngModel)] = "annonce.clientname" name = "clientname">
+        </div>
+
+        <div class="form-group">
+            <label> libelle </label>
+            <input type="text" class ="form-control" id = "libelle"
+                [(ngModel)] = "annonce.libelle" name = "libelle">
+        </div>
+        <div class="form-group">
+            <label> adresse </label>
+            <input type="text" class ="form-control" id = "adresse"
+                [(ngModel)] = "annonce.adresse" name = "adresse">
+        </div>
+        <div class="form-group">
+            <label>N.téléphone 1 </label>
+            <input type="text" class ="form-control" id = "tel1"
+                [(ngModel)] = "annonce.tel1" name = "tel1">
+        </div>
+        <div class="form-group">
+            <label> N.téléphone 2 </label>
+            <input type="text" class ="form-control" id = "tel2"
+                [(ngModel)] = "annonce.tel2" name = "tel2">
+        </div>
+        <div class="form-group">
+            <label> Prix de vente </label>
+            <input type="text" class ="form-control" id = "pv"
+                [(ngModel)] = "annonce.pv" name = "pv">
+        </div>
+
+        <div class="form-group">
+            <label> Description </label>
+            <input type="text" class ="form-control" id = "description"
+                [(ngModel)] = "annonce.description" name = "description">
+        </div>
+        <div class="form-group">
+            <label>Etat  </label>
+                <select class="form-control"  id ="etat"  [(ngModel)] = "annonce.etat" name = "etat">
+                    <option value="valide">valide</option>
+                    <option value="nonvalide">nonvalide</option>
+                </select> 
+        </div>
+        <button class = "btn btn-success" type ="submit">Submit</button>
+
+    </form>
+   
+</div>

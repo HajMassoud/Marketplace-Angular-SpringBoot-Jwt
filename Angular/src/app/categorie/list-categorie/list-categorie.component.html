@@ -1,0 +1,29 @@
+<h2>Liste des categories</h2>
+<table class="table table-striped">
+    <thead>
+      <tr>
+          <th>ID</th>
+          <th>Code</th>
+          <th>Libelle</th>
+          <th>Actions</th>
+          <th>
+              <a class ="btn btn-outline-success" (click) = "addCategorieLink()" >
+                  <i class="fa fa-plus-square">Create new</i>
+              </a>
+          </th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let categorie of categories">
+            <td>{{categorie.id}}</td>
+            <td>{{categorie.code}}</td>
+            <td>{{categorie.libelle}}</td>
+            <td>
+                <button (click) = "updateCategorie(categorie.id)" class = "btn btn-primary"  > Update</button>
+                <button (click) = "deleteCategorie(categorie.id)" class = "btn btn-danger" style="margin: left 10px;"> Delete</button>
+                <button (click) = "detailsCategorie(categorie.id)" class = "btn btn-success" style="margin: left 10px;"> View</button>
+            </td>
+               
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,47 @@
+<div class="pricing-header mx-auto">
+    <div class="table-responsive">
+     <table class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg">
+      <thead>
+         <tr>
+             <th scode="col">ID</th>
+             <th scode="col">Numero</th>
+             <th scode="col">Code</th>
+             <th scode="col">Libelle</th>
+             <th scode="col">TVA</th>
+             <th scode="col">Prix de vente</th>
+             <th scode="col">Quantité</th>
+             <th scode="col">montht</th>
+             <th scode="col">monttva</th>
+             <th scode="col">montttc</th>
+             <th scode="col">Image</th>
+           
+         </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let item of lpaniers">
+             <td>{{item.id}}</td>
+             <td>{{item.numero}}</td>
+             <td>{{item.code}}</td>
+             <td>{{item.libelle}}</td>
+             <td>{{item.tva}}</td>
+             <td>{{item.pv}}</td>
+             <td>{{item.qte}}</td>
+             <td >{{this.decimalPipe.transform(item.montht, this.format)}}</td>
+             <td >{{this.decimalPipe.transform(item.monttva, this.format)}}</td>
+             <td >{{this.decimalPipe.transform(item.montttc, this.format)}}</td>
+             <td><a href="#"><img class="card-img-top img-responsive"
+                 src="{{this.crudApi.host +'/api/Imgarticlesd/'+item.code}}"
+                 style="height :100px;width: 100px;"
+                 alt=""></a></td>
+ 
+                             
+         </tr>
+      </tbody>
+     </table>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-danger" (click)="close()">
+            <i class="fa fa-close">Close</i>
+        </button>                
+    </div>
+ </div>

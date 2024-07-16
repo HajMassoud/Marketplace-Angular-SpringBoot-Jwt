@@ -1,0 +1,30 @@
+<h2>Liste des sous categories</h2>
+<table class="table table-striped">
+    <thead>
+      <tr>
+          <th>Code</th>
+          <th>Libelle</th>
+          <th>Libelle categorie</th>
+        
+          <th>Actions</th>
+          <th>
+              <a class ="btn btn-outline-success" (click) = "addScategorieLink()" >
+                  <i class="fa fa-plus-square">Create new</i>
+              </a>
+          </th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let scategorie of scategories">
+            <td>{{scategorie.code}}</td>
+            <td>{{scategorie.libelle}}</td>
+            <td>{{scategorie.libcateg}}</td>
+            
+            <td>
+                <button (click) = "updateScategorie(scategorie.id)" class = "btn btn-primary"  > Update</button>
+                <button (click) = "deleteScategorie(scategorie.id)" class = "btn btn-danger" style="margin: left 10px;"> Delete</button>
+            </td>
+               
+        </tr>
+    </tbody>
+</table>

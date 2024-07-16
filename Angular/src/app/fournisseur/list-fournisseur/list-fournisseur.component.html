@@ -1,0 +1,31 @@
+<h2>Liste des fournisseurs</h2>
+<table class="table table-striped">
+    <thead>
+      <tr>
+          <th>ID</th>
+          <th>Code</th>
+          <th>Nom du fournisseur</th>
+          <th>Telephone</th>
+          <th>e-mail</th>
+          <th>
+              <a class ="btn btn-outline-success" (click) = "addFournisseurLink()" >
+                  <i class="fa fa-plus-square">Create new</i>
+              </a>
+          </th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let fournisseur of fournisseurs">
+            <td>{{fournisseur .id}}</td>
+            <td>{{fournisseur .code}}</td>
+            <td>{{fournisseur .fourName }}</td>
+            <td>{{fournisseur .tel}}</td>
+            <td>{{fournisseur .email}}</td>           
+            <td>
+                <button (click) = "updateFournisseur(fournisseur.id)" class = "btn btn-primary"  > Update</button>
+                <button (click) = "deleteFournisseur(fournisseur.id)" class = "btn btn-danger" style="margin: left 10px;"> Delete</button>
+                <button (click) = "detailsFournisseur(fournisseur.id)" class = "btn btn-success" style="margin: left 10px;"> View</button>
+            </td>
+               
+        </tr>
+    </tbody>

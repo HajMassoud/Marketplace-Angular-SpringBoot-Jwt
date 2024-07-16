@@ -1,0 +1,28 @@
+<div class="login-box  bigbanner">
+    <h2>Login</h2>
+    <form  [formGroup]="this.loginForm">
+      <div class="user-box">
+        <input type="text" formControlName="username" id="username">
+        <label>Username</label>
+      </div>
+      <div class="user-box">
+        <input type="password" formControlName="password" id="password">
+        <label>Password</label>
+      </div>
+  
+      <a (click)="login()">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Submit
+      </a>
+      <b (click)="onRegister()">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Register
+      </b>
+    </form>
+  </div>

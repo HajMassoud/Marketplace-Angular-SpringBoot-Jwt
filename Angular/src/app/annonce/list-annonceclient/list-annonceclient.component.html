@@ -1,0 +1,59 @@
+<header class="header-section">
+    <nav class="main-navbar">
+        <div class="container">
+      <ul class="main-menu">
+          <li><a href="#">Liste Annonces </a></li>
+
+      </ul>
+        </div>
+    </nav>
+</header>
+<div>
+<table class="table table-hover">
+<thead class="thead-light">
+<th>Nom du client </th>
+<th>Libelle</th>  
+<th>Adresse</th>
+<th>N.Téléphone 1</th>
+<th>N.Téléphone 2</th>
+<th>Prix de vente</th>
+<th>Description</th>
+<th>Action</th>
+
+</thead>
+<tbody>
+
+    <tr *ngFor="let item of annonces | paginate: { itemsPerPage: 7, currentPage: p }">
+    <td>{{item.clientname}}</td>
+    <td>{{item.libelle}}</td>
+    <td>{{item.adresse}}</td>
+    <td>{{item.tel1}}</td>
+    <td>{{item.tel2}}</td>
+    <td>{{item.pv}}</td>
+    <td>{{item.description}}</td>
+    <td>
+        <button (click) = "updateClient(item.id)" class = "btn btn-primary"  > Update</button>
+        <button (click)="removeData(item.id)" class = "btn btn-danger"  > Delete </button>
+        
+    </td>
+
+  
+    </tr>
+    <div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite"></div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate"><ul class="pagination"></ul></div></div></div>
+</tbody>
+    
+
+</table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+<div class="form-group">
+    <button class="btn btn-danger" (click)="close()">
+        <i class="fa fa-close">Close</i>
+    </button>                
+</div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+<mat-toolbar color="primary">
+    <h1 align="center" >Add annonce  </h1>
+  </mat-toolbar>
+<div align="center" >
+    <form [formGroup]="this.crudApi.dataForm" (ngSubmit)="onSubmit()">
+        <input type="hidden" formControlName="id" id="id">
+
+        <div class="form-group col-md-6">
+            <label>UserName</label>
+            <input type="text" class="form-control" formControlName="clientname"  readonly>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Libelle</label>
+            <input type="text" class="form-control" formControlName="libelle" id="libelle">
+        </div>
+     
+        <div class="form-group col-md-6">
+            <label>Adresse </label>
+            <input type="text" class="form-control" formControlName="adresse" id="adresse">
+        </div>
+        <div class="form-group col-md-6">
+            <label>N.téléphone 1 </label>
+            <input type="text" class="form-control" formControlName="tel1" id="tel1">
+        </div>
+        <div class="form-group col-md-6">
+            <label>N.téléphone 2 </label>
+            <input type="text" class="form-control" formControlName="tel2" id="tel2">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Description</label>
+            <input type="text" class="form-control" formControlName="description" id="description">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Prix de vente</label>
+            <input type="text" class="form-control" formControlName="pv" id="pv">
+        </div>
+        
+       
+        <div class="form-group ">
+            <label>Upload file</label>
+            <input type="file" accept="image/*" (change)="onSelectFile($event)" >
+            <img [src]="imgURL" height="250" width="230" *ngIf="imgURL">
+        </div>
+
+
+        <div class="form-group">
+            <button class = "btn btn-success" type ="submit">Submit</button>
+            <button class="btn btn-danger" (click)="close()">
+                <i class="fa fa-close">Close</i>
+            </button>                
+        </div>
+
+
+    </form>
+
+</div>

@@ -1,0 +1,76 @@
+<section >
+
+
+
+<div class="area" >
+        <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+        </ul>
+        <div class="row justify-content-center align-items-center h-100">
+          <div class="col-12 col-lg-9 col-xl-5">
+            <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+              <div class="card-body p-4 p-md-5">
+                <h3 class="mb-5 pb-1 pb-md-0 mb-md-5">Registration Form</h3>
+                <form [formGroup]="this.crudApi.formData" (ngSubmit)="onSubmit()">
+                  <input type="hidden" formControlName="id" id="id">
+    
+                 
+                     <div class="form-group ">
+                           <label>User Name</label>
+                           <input type="text" class="form-control" formControlName="clientname" id="clientname"required ="required" minlength="4">
+                      </div>
+    
+                      <div class="form-group ">
+                        <label>Votre E-mail</label>
+                          <input type="email" class="form-control" formControlName="email" id="email"required ="required" >
+                        </div>
+    
+                      <div class="form-group ">
+                         <label>Votre adresse</label>
+                         <input type="text" class="form-control" formControlName="adresse" id="adresse" required ="required" minlength="4" >
+                      </div>
+    
+                      <div class="form-group ">
+                          <label>Votre Num mobile</label>
+                        <input type="text" class="form-control" formControlName="tel" id="tel"  required ="required"  minlength="8" maxlength="8"  pattern="[0-9]+" >
+                       </div>
+    
+                      <div class="form-group ">
+                          <label>Votre Num mobile 2</label>
+                          <input type="text" class="form-control" formControlName="fax" id="fax"  minlength="8" maxlength="8">
+                      </div>
+                    
+                      <div class="form-group ">
+                        <label>Votre mot de passe </label>
+                        <input type="password" class="form-control" formControlName="pwd" id="pwd"required ="required"  minlength="8">
+                      </div>
+               
+                      <div class="form-group ">
+                          <label>Upload file</label>
+                           <input type="file" accept="image/*" (change)="onSelectFile($event)" >
+                           <img [src]="imgURL" height="100" *ngIf="imgURL">
+                       </div>
+    
+    
+    
+    
+                  <div class="mt-4 pt-2">
+                    <button class = "btn btn-success" type ="submit">Submit</button>
+                  </div>
+    
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+</div >
+</section>

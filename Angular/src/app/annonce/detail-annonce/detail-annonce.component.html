@@ -1,0 +1,39 @@
+
+    <div class="container">
+        <div class="box">
+            <div class="product__img">
+                <img src="{{this.annonService.host+'/api/Imgannonces/'+annonce.id}}" alt="">
+            </div>
+
+            <div class="product__disc">
+                <div class="product__disc--content">
+                    <div class="disc__content--about">
+                        <h1>{{annonce.libelle}}</h1>
+                        <span><label><b>clientname = </b></label>{{annonce.clientname}}</span>
+                        <br>
+                        <span><label><b>Adresse = </b></label>{{annonce.adresse}}</span>
+                        <br>
+                        <span><label><b>N.téléphone 1 = </b></label>{{annonce.tel1}}</span>
+                        <br>
+                        <span><label><b>N.téléphone 2 = </b></label>{{annonce.tel2}}</span>
+                        <br>
+                        <span><label><b>Description = </b></label>{{annonce.description}}</span>
+                        <br>
+                        <span><label><b>prix de vente (DT) = </b></label>{{annonce.pv}}</span>
+
+                       
+
+                       
+                    </div>
+                   
+
+                  
+                </div>
+            </div>
+
+         
+        </div>
+    </div>
+
+
+

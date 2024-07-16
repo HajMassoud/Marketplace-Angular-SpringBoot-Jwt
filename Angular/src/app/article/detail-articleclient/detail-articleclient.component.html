@@ -1,0 +1,28 @@
+
+    <div class="container">
+        <div class="box">
+            <div class="product__img">
+                <img src="{{this.articleService.host+'/api/Imgarticles/'+article.id}}" alt=""height="500" width="500">
+            </div>
+
+            <div class="product__disc">
+                <div class="product__disc--content">
+                    <div class="disc__content--about">
+                        <h1>{{article.libelle}}</h1>
+                        <span><label><b>Prix de vente= </b></label>{{article.pv}}</span>
+                        <br>
+                        <span><label><b>Description = </b></label>{{article.description}}</span>
+                    
+                    </div>
+                   
+
+                  
+                </div>
+            </div>
+
+         
+        </div>
+    </div>
+
+
+

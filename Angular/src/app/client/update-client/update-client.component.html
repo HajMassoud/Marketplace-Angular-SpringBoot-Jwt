@@ -1,0 +1,45 @@
+<div class="col-md-6 offset-md-3">
+    <h3> Update  Client</h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label> Code </label>
+            <input type="text" class ="form-control" id = "code"
+                [(ngModel)] = "client.code" name = "code">
+        </div>
+        <div class="form-group">
+            <label> Non du client  </label>
+            <input type="text" class ="form-control" id = "clientname"
+                [(ngModel)] = "client.clientname" name = "clientname">
+        </div>
+        <div class="form-group">
+            <label> Adresse  </label>
+            <input type="text" class ="form-control" id = "adresse"
+                [(ngModel)] = "client.adresse" name = "adresse">
+        </div>
+        <div class="form-group">
+            <label> numéro du téléphone </label>
+            <input type="text" class ="form-control" id = "tel"
+                [(ngModel)] = "client.tel" name = "tel">
+        </div>
+        <div class="form-group">
+            <label> E-mail </label>
+            <input type="text" class ="form-control" id = "email"
+                [(ngModel)] = "client.email" name = "email">
+        </div>
+        <div class="form-group">
+            <label> Fax</label>
+            <input type="text" class ="form-control" id = "fax"
+                [(ngModel)] = "client.fax" name = "fax">
+        </div>
+        <div class="form-group">
+            <label> Mot de passe </label>
+            <input type="text" class ="form-control" id = "pwd"
+                [(ngModel)] = "client.pwd" name = "pwd">
+        </div>
+        <button class = "btn btn-success" type ="submit">Submit</button>
+        <button class = "btn btn-warning" (click)="back()">Back</button>
+
+    </form>
+   
+</div>

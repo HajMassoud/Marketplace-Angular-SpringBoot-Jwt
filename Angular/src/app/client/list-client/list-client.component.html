@@ -1,0 +1,29 @@
+<h2>Liste des Clients</h2>
+<table class="table table-striped">
+    <thead>
+      <tr>
+          
+          <th>Username</th>
+          <th>Telephone</th>
+          <th>e-mail</th>
+          <th>
+              <a class ="btn btn-outline-success" (click) = "addClientLink()" >
+                  <i class="fa fa-plus-square">Create new</i>
+              </a>
+          </th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let client of clients">
+            <td>{{client .clientname }}</td>
+            <td>{{client .tel}}</td>
+            <td>{{client .email}}</td>
+           
+            <td>
+                <button (click) = "updateClient(client.id)" class = "btn btn-primary"  > Update</button>
+                <button (click) = "deleteClient(client.id)" class = "btn btn-danger" style="margin: left 10px;"> Delete</button>
+                <button (click) = "detailsClient(client.id)" class = "btn btn-success" style="margin: left 10px;"> View</button>
+            </td>
+               
+        </tr>
+    </tbody>

@@ -1,0 +1,40 @@
+
+
+
+
+
+<div class="container">
+    <div class="cover-photo">
+      <img 
+      src="{{this.clientService.host +'/api/Imgclientss/'+clientname}}"
+      class="profile">
+    </div>
+    <div class="profile-name">Name :{{client.clientname}}</div>
+
+   <br>
+   <br>
+
+   <div>
+      <label><b>adresse = </b></label>{{client.adresse}}
+  </div> 
+   <div>
+      <label><b>Téléphone = </b></label>{{client.tel}}
+  </div> 
+  <div>
+      <label><b>E-mail = </b></label>{{client.email}}
+  </div>    
+  <div>
+      <label><b>Fax = </b></label>{{client.fax}}
+  </div>    
+  <div>
+      <label><b>Mot de passe = </b></label>{{client.pwd}}
+  </div>
+  
+  <button class="follow-btn" (click)="panierclient(client.clientname)">Commandes</button>
+  <button class="follow-btn" (click)="annonces(client.clientname)">Annonces</button>
+  <button class="follow-btn" (click)="addannonce(client.clientname)">Add Annonce</button>
+
+  <button class="follow-btn" (click)="back()">Back</button>
+  
+  </div>
+  

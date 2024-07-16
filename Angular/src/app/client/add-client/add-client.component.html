@@ -1,0 +1,55 @@
+<div class="col-md-6 offset-md-3">
+    <h3 > Create Client</h3>
+    <form [formGroup]="this.crudApi.formData" (ngSubmit)="onSubmit()">
+        <input type="hidden" formControlName="id" id="id">
+
+        <div class="form-group ">
+            <label>code client</label>
+            <input type="text" class="form-control" formControlName="code" id="code" required="required">
+       </div>
+           <div class="form-group ">
+                 <label>User Name</label>
+                 <input type="text" class="form-control" formControlName="clientname" id="clientname">
+            </div>
+
+            <div class="form-group ">
+              <label>E-mail</label>
+                <input type="email" class="form-control" formControlName="email" id="email">
+              </div>
+
+            <div class="form-group ">
+               <label> adresse</label>
+               <input type="text" class="form-control" formControlName="adresse" id="adresse">
+            </div>
+
+            <div class="form-group ">
+                <label> Num mobile</label>
+              <input type="text" class="form-control" formControlName="tel" id="tel">
+             </div>
+
+            <div class="form-group ">
+                <label>Fax</label>
+                <input type="text" class="form-control" formControlName="fax" id="fax">
+            </div>
+          
+            <div class="form-group ">
+              <label>Mot de passe </label>
+              <input type="password" class="form-control" formControlName="pwd" id="pwd">
+            </div>
+     
+            <div class="form-group ">
+                <label>Upload file</label>
+                 <input type="file" accept="image/*" (change)="onSelectFile($event)" >
+                 <img [src]="imgURL" height="100" *ngIf="imgURL">
+             </div>
+
+
+
+
+        <div class="mt-4 pt-2">
+          <button class = "btn btn-success" type ="submit">Submit</button>
+        </div>
+
+      </form>
+   
+</div>

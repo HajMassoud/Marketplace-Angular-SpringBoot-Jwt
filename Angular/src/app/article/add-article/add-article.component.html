@@ -1,0 +1,88 @@
+<mat-toolbar color="primary">
+    <h1>Add article </h1>
+  </mat-toolbar>
+<div style="overflow-y : scroll;height:500;" class="col-md-12 col-md-offset-2">
+    <form [formGroup]="this.crudApi.dataForm" (ngSubmit)="onSubmit()">
+        <input type="hidden" formControlName="id" id="id">
+
+        <div class="form-group col-md-6">
+            <label>code catégorie</label>
+            <select class="form-control " formControlName="libcateg" id="libcateg" 
+            (change)="onSelectCateg($any($event).target.value)">
+                
+                <option value="0">-select-</option>
+                <option *ngFor="let item of CategorieList" value="{{item.libelle}}">{{item.libelle}}</option>
+
+            </select>
+        </div>
+
+         <div class="form-group col-md-6">
+            <label>code Sous catégorie</label>
+            <select class="form-control " formControlName="libscateg" id="libscateg" 
+            (change)="onSelectScateg($any($event).target.value)">
+                <option value="0">-select-</option>
+                <option *ngFor="let item of ScategorieList" value="{{item.code}}">{{item.libelle}}</option>
+            </select>
+        </div>
+
+
+        <div class="form-group col-md-6">
+            <label>Lib Fournisseur</label>
+            <select class="form-control " formControlName="libfour" id="libfour" >
+                
+                <option value="0">-select-</option>
+                <option *ngFor="let item of fourList" value="{{item.fourName}}">{{item.fourName}}</option>
+
+            </select>
+        </div>
+
+
+
+
+        <div class="form-group col-md-6">
+            <label>Code</label>
+            <input type="text" class="form-control" formControlName="code" id="code">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Libelle</label>
+            <input type="text" class="form-control" formControlName="libelle" id="libelle">
+        </div>
+     
+        <div class="form-group col-md-6">
+            <label>Prix d'achat </label>
+            <input type="text" class="form-control" formControlName="pa" id="pa">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Prix de vente</label>
+            <input type="text" class="form-control" formControlName="pv" id="pv">
+        </div>
+        <div class="form-group col-md-6">
+            <label>TVA</label>
+            <input type="text" class="form-control" formControlName="tva" id="tva">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Stock</label>
+            <input type="text" class="form-control" formControlName="stock" id="stock">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Description</label>
+            <input type="text" class="form-control" formControlName="description" id="description">
+        </div>
+        <div class="form-group ">
+            <label>Upload file</label>
+            <input type="file" accept="image/*" (change)="onSelectFile($event)" >
+            <img [src]="imgURL" height="100" *ngIf="imgURL">
+        </div>
+
+
+        <div class="form-group">
+            <button class = "btn btn-success" type ="submit">Submit</button>
+            <button class="btn btn-danger" [mat-dialog-close]="true">
+                <i class="fa fa-close">Close</i>
+            </button>                
+        </div>
+
+
+    </form>
+
+</div>

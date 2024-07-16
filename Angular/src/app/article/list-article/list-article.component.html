@@ -1,0 +1,45 @@
+<div class="pricing-header mx-auto">
+   <div class="table-responsive">
+    <table class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg">
+     <thead>
+        <tr>
+            <th scode="col">ID</th>
+            <th scode="col">code</th>
+            <th scode="col">Libelle</th>
+            <th scode="col">Prix d'achat</th>
+            <th scode="col">prix de vente</th>
+            <th scode="col">TVA</th>
+            <th scode="col">Stock</th>
+            <th scode="col">Description</th>
+            <th scode="col">Image</th>
+            <th>
+                <a class ="btn btn-outline-success" (click) = "addArticle()" >
+                    <i class="fa fa-plus-square">Create new</i>
+                </a>
+            </th>
+        </tr>
+     </thead>
+     <tbody>
+        <tr *ngFor="let item of articles">
+            <td>{{item.id}}</td>
+            <td>{{item.code}}</td>
+            <td>{{item.libelle}}</td>
+            <td>{{item.pa}}</td>
+            <td>{{item.pv}}</td>
+            <td>{{item.tva}}</td>
+            <td>{{item.stock}}</td>
+            <td>{{item.description}}</td>
+            <td><a href="#"><img class="card-img-top img-responsive"
+                src="{{this.crudApi.host +'/api/Imgarticles/'+item.id}}"
+                style="height :100px;width: 100px;"
+                alt=""></a></td>
+
+             <td>
+                <button (click)="selectData(item)" class = "btn btn-primary"  > Select </button>
+                <button (click)="removeData(item.id)" class = "btn btn-danger"  > Delete </button>
+            </td>                   
+        </tr>
+     </tbody>
+    </table>
+   </div>
+</div>

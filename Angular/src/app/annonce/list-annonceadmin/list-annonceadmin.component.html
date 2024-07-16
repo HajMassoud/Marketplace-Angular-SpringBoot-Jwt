@@ -1,0 +1,47 @@
+<div class="pricing-header mx-auto">
+    <div class="table-responsive">
+     <table class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg">
+      <thead>
+         <tr>
+             <th scode="col">ID</th>
+             <th scode="col">UserName</th>
+             <th scode="col">Libelle</th>
+             <th scode="col">Adresse</th>
+             <th scode="col">N.téléphone 1</th>
+             <th scode="col">N.téléphone 1</th>
+             <th scode="col">Prix</th>
+             <th scode="col">Etat</th>
+             <th scode="col">Description</th>
+             <th>
+                 <a class ="btn btn-outline-success" (click) = "addAnnonce()" >
+                     <i class="fa fa-plus-square">Create new</i>
+                 </a>
+             </th>
+         </tr>
+      </thead>
+      <tbody >
+         <tr  *ngFor="let item of this.service.list">
+             <td>{{item.id}}</td>
+             <td>{{item.clientname}}&nbsp;<button type="button" class="btn btn-primary btn-sm"(click)="detailsClient(item.clientname)">Info</button></td>
+             <td>{{item.libelle}}</td>
+             <td>{{item.adresse}}</td>
+             <td>{{item.tel1}}</td>
+             <td>{{item.tel2}}</td>
+             <td>{{item.pv}}</td>
+             <td>{{item.etat}}</td>
+             <td>{{item.description}}</td>
+            
+             <td><a href="#"><img class="card-img-top img-responsive"
+                 src="{{this.service.host +'/api/Imgannonces/'+item.id}}"
+                 style="height :100px;width: 100px;"
+                 alt=""></a></td>
+ 
+              <td>
+                 <button (click)="updatetData(item.id)" class = "btn btn-primary"  > update </button>
+                 <button (click)="removeData(item.id)" class = "btn btn-danger"  > Delete </button>
+             </td>                   
+         </tr>
+      </tbody>
+     </table>
+    </div>
+ </div>
